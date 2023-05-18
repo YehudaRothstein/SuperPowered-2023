@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Scout">
+    <output-path>$PROJECT_DIR$/out/artifacts/Scout</output-path>
+    <root id="archive" name="Scout.jar" />
+  </artifact>
+</component>
