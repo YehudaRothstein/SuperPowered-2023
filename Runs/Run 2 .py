@@ -1,9 +1,8 @@
-#----------------------------------------------- SoftWare Updates / Imports --------------------------------------------------
 from spike import PrimeHub, LightMatrix, Button, StatusLight, ForceSensor, MotionSensor, Speaker, ColorSensor, App, DistanceSensor, Motor, MotorPair
 from spike.control import wait_for_seconds, wait_until, Timer
 from math import *
 import time
-#----------------------------------------------- Motor / Variable Declaration--------------------------------------------------
+
 time.sleep(1)
 hub = PrimeHub()
 motora = Motor('A')
@@ -16,7 +15,6 @@ motorc.set_degrees_counted(0)
 perror = 0
 I = 0
 x = hub.motion_sensor.get_yaw_angle()
-#------------------------------------------------------- PID Calculus ---------------------------------------------------------
 def PID(Error, KP, KI, KD):
     global perror
     global I
@@ -26,7 +24,6 @@ def PID(Error, KP, KI, KD):
     perror = P
     PID = P * KP + I * KI + D * KD
     return (PID)
-#----------------------------------------------- Drive Function Calculus --------------------------------------------------
 def Drive(Velocity, Angle, cm):
     motora.set_degrees_counted(0)
     motorb.set_degrees_counted(0)
@@ -50,7 +47,6 @@ def Drive(Velocity, Angle, cm):
             print(hub.motion_sensor.get_yaw_angle())
     motora.stop()
     motorb.stop()
-#----------------------------------------------- Board Move Function Declaration --------------------------------------------------
 def BoardMoveUp(he):
     he = he * -1
     motorc.run_to_degrees_counted(he, 100)
@@ -72,7 +68,6 @@ def RotationUp(rotations):
 
 def RotationSide(rotations):
     motord.run_for_rotations(rotations,100)
-#----------------------------------------------- Terminal / Console --------------------------------------------------
 #Drive(Velocity,Angle, Distance)
 #    Drive To Objective [02]
 Drive(60,0,32.5)

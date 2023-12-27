@@ -6,5 +6,5 @@ def PID(Error, KP, KI, KD):
     D = Error - perror
     perror = P
     PID = P * KP + I * KI + D * KD
-    return (PID)
-    print("hello")
+    return PID
+

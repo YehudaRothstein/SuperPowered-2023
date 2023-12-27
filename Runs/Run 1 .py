@@ -24,7 +24,7 @@ def PID(Error, KP, KI, KD):
     D = Error - perror
     perror = P
     PID = P * KP + I * KI + D * KD
-    return (PID)
+    return PID
 #----------------------------------------------- Drive Function Calculus --------------------------------------------------
 def Drive(Velocity, Angle, cm):
     motora.set_degrees_counted(0)
@@ -36,13 +36,13 @@ def Drive(Velocity, Angle, cm):
     ti = 0.0002
     td = 0.08
     if cm > 0 :
-        while (motora.get_degrees_counted()+ motorb.get_degrees_counted()*-1)/ (720) * (3 * pi) < cm:
+        while (motora.get_degrees_counted()+ motorb.get_degrees_counted()*-1)/ 720 * (3 * pi) < cm:
             v = int(PID(hub.motion_sensor.get_yaw_angle() - Angle, kp, ki, kd))
             motora.start(Velocity + v)
             motorb.start((Velocity - v)*-1)
             print(hub.motion_sensor.get_yaw_angle())
     else:
-        while (motora.get_degrees_counted()+ motorb.get_degrees_counted()*-1)/ (720) * (3 * pi) > cm:
+        while (motora.get_degrees_counted()+ motorb.get_degrees_counted()*-1)/ 720 * (3 * pi) > cm:
             v = int(PID(hub.motion_sensor.get_yaw_angle() - Angle, tp, ti, td))
             motora.start((Velocity - v)*-1)
             motorb.start(Velocity + v)
