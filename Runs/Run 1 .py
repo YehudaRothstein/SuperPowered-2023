@@ -1,9 +1,9 @@
-#----------------------------------------------- SoftWare Updates / Imports --------------------------------------------------
+#---------------------------------------------- SoftWare Updates / Imports --------------------------------------------------
 from spike import PrimeHub, LightMatrix, Button, StatusLight, ForceSensor, MotionSensor, Speaker, ColorSensor, App, DistanceSensor, Motor, MotorPair
 from spike.control import wait_for_seconds, wait_until, Timer
 from math import *
 import time
-#----------------------------------------------- Motor / Variable Declaration--------------------------------------------------
+#---------------------------------------------- Motor / Variable Declaration--------------------------------------------------
 hub = PrimeHub()
 motora = Motor('A')
 motorb = Motor('B')
