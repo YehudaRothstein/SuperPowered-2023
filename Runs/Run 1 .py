@@ -25,7 +25,7 @@ def PID(Error, KP, KI, KD):
     perror = P
     PID = P * KP + I * KI + D * KD
     return PID
-#---------------------------------------------- Drive Function Calculus --------------------------------------------------
+#--------------------------------------------- Drive Function Calculus --------------------------------------------------
 def Drive(Velocity, Angle, cm):
     motora.set_degrees_counted(0)
     motorb.set_degrees_counted(0)
