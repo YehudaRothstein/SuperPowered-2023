@@ -15,7 +15,7 @@ motorc.set_degrees_counted(0)
 perror = 0
 I = 0
 x = hub.motion_sensor.get_yaw_angle()
-#------------------------------------------------------- PID Calculus ---------------------------------------------------------
+#------------------------------------------------------ PID Calculus ---------------------------------------------------------
 def PID(Error, KP, KI, KD):
     global perror
     global I
@@ -25,7 +25,7 @@ def PID(Error, KP, KI, KD):
     perror = P
     PID = P * KP + I * KI + D * KD
     return PID
-#----------------------------------------------- Drive Function Calculus --------------------------------------------------
+#---------------------------------------------- Drive Function Calculus --------------------------------------------------
 def Drive(Velocity, Angle, cm):
     motora.set_degrees_counted(0)
     motorb.set_degrees_counted(0)
